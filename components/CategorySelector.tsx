@@ -14,7 +14,7 @@ export default function CategorySelector() {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className='bg-gradient-to-b from-slate-100 to-gray-200 p-8 rounded-lg'>
-        <h2 className="text-3xl font-extrabold mb-8 text-gray-800">เลือกหมวดหมู่คำศัพท์</h2>
+        <h2 className="text-2xl font-extrabold mb-8 text-gray-800">เลือกหมวดหมู่คำศัพท์</h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {categories.map(category => (
             <button

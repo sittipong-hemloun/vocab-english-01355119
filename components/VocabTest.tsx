@@ -67,9 +67,9 @@ export default function VocabTest({ category }: VocabTestProps) {
   if (!currentVocab) return <div>กำลังโหลด...</div>;
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <div className=" bg-white rounded-lg shadow-lg p-2">
       <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
-          ทายคำศัพท์ภาษาอังกฤษ
+        ทายคำศัพท์ภาษาอังกฤษ
       </h2>
 
       <div className="flex justify-center mb-4">

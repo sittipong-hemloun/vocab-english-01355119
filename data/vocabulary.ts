@@ -6,34 +6,34 @@ export const vocabularyData: Vocabulary[] = [
   { id: 3, thai: 'ประจำปี', english: 'annual', category: 'root' },
   { id: 4, thai: 'น้ำ', english: 'aquatic', category: 'root' },
   { id: 5, thai: 'นักบินอวกาศ', english: 'astronaut', category: 'root' },
-  { id: 6, thai: 'ได้ยิน', english: 'audible', category: 'root' },
-  { id: 7, thai: 'ประโยชน์', english: 'benefit', category: 'root' },
+  { id: 6, thai: 'ได้ยินเสีนง', english: 'audible', category: 'root' },
+  { id: 7, thai: 'ผลประโยชน์', english: 'benefit', category: 'root' },
   { id: 8, thai: 'ชีวประวัติ', english: 'biography', category: 'root' },
-  { id: 9, thai: 'ถอยหลัง', english: 'recede', category: 'root' },
+  { id: 9, thai: 'ถอยกลับ', english: 'recede', category: 'root' },
   { id: 10, thai: 'ลำดับเวลา', english: 'chronology', category: 'root' },
   { id: 11, thai: 'ทำนาย', english: 'prediction', category: 'root' },
   { id: 12, thai: 'การนำพา', english: 'conduct', category: 'root' },
   { id: 13, thai: 'สมดุล', english: 'equilibrium', category: 'root' },
-  { id: 14, thai: 'แตก', english: 'fragment', category: 'root' },
+  { id: 14, thai: 'ชิ้นส่วน', english: 'fragment', category: 'root' },
   { id: 15, thai: 'ธรณีวิทยา', english: 'geology', category: 'root' },
   { id: 16, thai: 'กราฟิก', english: 'graphic', category: 'root' },
   { id: 17, thai: 'ย่อหน้า', english: 'paragraph', category: 'root' },
   { id: 18, thai: 'ไฮโดรเจน', english: 'hydrogen', category: 'root' },
-  { id: 19, thai: 'น้ำ', english: 'hydrate', category: 'root' },
-  { id: 20, thai: 'ไวต่อ', english: 'hypersensitive', category: 'root' },
+  { id: 19, thai: 'ให้ความชุ่มชื้น', english: 'hydrate', category: 'root' },
+  { id: 20, thai: 'ไวต่อความรู้สึกมาก', english: 'hypersensitive', category: 'root' },
   { id: 21, thai: 'ความดันโลหิตสูง', english: 'hypertension', category: 'root' },
   { id: 22, thai: 'ภาวะอุณหภูมิต่ำ', english: 'hypothermia', category: 'root' },
   { id: 23, thai: 'ผู้ป่วยทางจิต', english: 'hypochondriac', category: 'root' },
   { id: 24, thai: 'ตรรกะ', english: 'logic', category: 'root' },
-  { id: 25, thai: 'การศึกษาคำ', english: 'phonology', category: 'root' },
+  { id: 25, thai: 'เสียงวิทยา', english: 'phonology', category: 'root' },
   { id: 26, thai: 'บทสนทนา', english: 'dialogue', category: 'root' },
   { id: 27, thai: 'การพูดคนเดียว', english: 'monologue', category: 'root' },
   { id: 28, thai: 'ต้นฉบับ', english: 'manuscript', category: 'root' },
   { id: 29, thai: 'การผลิต', english: 'manufacture', category: 'root' },
-  { id: 30, thai: 'ขอบเขต', english: 'perimeter', category: 'root' },
-  { id: 31, thai: 'มาตรฐาน', english: 'metric', category: 'root' },
-  { id: 32, thai: 'ส่ง', english: 'transmit', category: 'root' },
-  { id: 33, thai: 'การส่งคืน', english: 'remit', category: 'root' },
+  { id: 30, thai: 'ปริมณฑล', english: 'perimeter', category: 'root' },
+  { id: 31, thai: 'เมตริก', english: 'metric', category: 'root' },
+  { id: 32, thai: 'ส่งต่อ', english: 'transmit', category: 'root' },
+  { id: 33, thai: 'ส่งเงิน', english: 'remit', category: 'root' },
   { id: 34, thai: 'มรณะ', english: 'mortality', category: 'root' },
   { id: 35, thai: 'ผู้ประกอบศพ', english: 'mortician', category: 'root' },
   { id: 36, thai: 'การเคลื่อนไหว', english: 'motion', category: 'root' },
@@ -48,11 +48,11 @@ export const vocabularyData: Vocabulary[] = [
   { id: 45, thai: 'รบกวน', english: 'disrupt', category: 'root' },
   { id: 46, thai: 'กล้องจุลทรรศน์', english: 'microscope', category: 'root' },
   { id: 47, thai: 'กล้องส่องทางไกล', english: 'periscope', category: 'root' },
-  { id: 48, thai: 'การเขียน', english: 'manuscript', category: 'root' },
-  { id: 49, thai: 'การถอดเสียง', english: 'transcription', category: 'root' },
+  { id: 48, thai: 'ต้นฉบับ', english: 'manuscript', category: 'root' },
+  { id: 49, thai: 'การถอดความ', english: 'transcription', category: 'root' },
   { id: 50, thai: 'การตรวจสอบ', english: 'inspect', category: 'root' },
   { id: 51, thai: 'ผู้ชม', english: 'spectator', category: 'root' },
-  { id: 52, thai: 'การก่อสร้าง', english: 'construct', category: 'root' },
+  { id: 52, thai: 'สร้าง', english: 'construct', category: 'root' },
   { id: 53, thai: 'โครงสร้างพื้นฐาน', english: 'infrastructure', category: 'root' },
   { id: 54, thai: 'การสื่อสารทางโทรศัพท์', english: 'telecommunication', category: 'root' },
   { id: 55, thai: 'กล้องโทรทรรศน์', english: 'telescope', category: 'root' },
@@ -60,7 +60,7 @@ export const vocabularyData: Vocabulary[] = [
   { id: 57, thai: 'เครื่องวัดอุณหภูมิ', english: 'thermometer', category: 'root' },
   { id: 58, thai: 'ความร้อน', english: 'thermal', category: 'root' },
   { id: 59, thai: 'อุณหพลศาสตร์', english: 'thermodynamics', category: 'root' },
-  { id: 60, thai: 'ดึง', english: 'attract', category: 'root' },
+  { id: 60, thai: 'ดึงดูด', english: 'attract', category: 'root' },
   { id: 61, thai: 'แทรกเตอร์', english: 'tractor', category: 'root' },
   { id: 62, thai: 'สกัด', english: 'extract', category: 'root' },
   { id: 63, thai: 'วิดีโอ', english: 'video', category: 'root' },
@@ -71,31 +71,31 @@ export const vocabularyData: Vocabulary[] = [
   // prefix entries
 
   // a- prefix entries
-  { id: 67, thai: 'ไร้เลือด', english: 'anemia', category: 'prefix' },
+  { id: 67, thai: 'โลหิตจาง', english: 'anemia', category: 'prefix' },
   { id: 68, thai: 'ไร้เพศ', english: 'asexual', category: 'prefix' },
-  { id: 69, thai: 'ไร้รัฐ', english: 'anarchy', category: 'prefix' },
-  { id: 70, thai: 'ไร้ความรู้สึก', english: 'apathy', category: 'prefix' },
+  { id: 69, thai: 'ไร้การปกครอง', english: 'anarchy', category: 'prefix' },
+  { id: 70, thai: 'ไร้ความอารี', english: 'apathy', category: 'prefix' },
 
   // ab- prefix entries
   { id: 71, thai: 'ผิดปกติ', english: 'abnormal', category: 'prefix' },
   { id: 72, thai: 'งดเว้น', english: 'abstain', category: 'prefix' },
-  { id: 73, thai: 'ฉุดรั้ง', english: 'abduct', category: 'prefix' },
+  { id: 73, thai: 'ชิงตัว', english: 'abduct', category: 'prefix' },
 
   // anti- prefix entries
-  { id: 74, thai: 'ต้านเชื้อโรค', english: 'antibiotic', category: 'prefix' },
+  { id: 74, thai: 'ยาปฏิชีวนะ', english: 'antibiotic', category: 'prefix' },
   { id: 75, thai: 'ยาแก้พิษ', english: 'antidote', category: 'prefix' },
   { id: 76, thai: 'ต่อต้านสังคม', english: 'antisocial', category: 'prefix' },
   { id: 77, thai: 'ตอนจบที่ไร้อารมณ์', english: 'anticlimax', category: 'prefix' },
 
   // ante- prefix entries
   { id: 78, thai: 'สิ่งที่มาก่อน', english: 'antecedent', category: 'prefix' },
-  { id: 79, thai: 'กำหนดวันก่อน', english: 'antedate', category: 'prefix' },
+  { id: 79, thai: 'ก่อนกำหนด', english: 'antedate', category: 'prefix' },
   { id: 80, thai: 'ห้องรอก่อนเข้าห้องหลัก', english: 'antechamber', category: 'prefix' },
 
   // auto- prefix entries
   { id: 81, thai: 'อัตโนมัติ', english: 'automatic', category: 'prefix' },
   { id: 82, thai: 'นักบินอัตโนมัติ', english: 'autopilot', category: 'prefix' },
-  { id: 83, thai: 'เซ็นชื่อด้วยตัวเอง', english: 'autograph', category: 'prefix' },
+  { id: 83, thai: 'ลายเซ็น', english: 'autograph', category: 'prefix' },
 
   // co-, com-, con-, col-, cor- prefix entries
   { id: 84, thai: 'ร่วมมือกัน', english: 'collaborate', category: 'prefix' },
@@ -108,13 +108,13 @@ export const vocabularyData: Vocabulary[] = [
   { id: 89, thai: 'สลาย', english: 'decompose', category: 'prefix' },
   { id: 90, thai: 'ถอดรหัส', english: 'decode', category: 'prefix' },
   { id: 91, thai: 'ลดค่า', english: 'devalue', category: 'prefix' },
-  { id: 92, thai: 'ยกเลิกการทำงาน', english: 'deactivate', category: 'prefix' },
+  { id: 92, thai: 'ปิดการใช้งาน', english: 'deactivate', category: 'prefix' },
 
   // en-, em- prefix entries
   { id: 93, thai: 'ทำให้เกิดอันตราย', english: 'endanger', category: 'prefix' },
   { id: 94, thai: 'เพิ่มอำนาจ', english: 'empower', category: 'prefix' },
   { id: 95, thai: 'ปิดล้อม', english: 'enclose', category: 'prefix' },
-  { id: 96, thai: 'กอด', english: 'embrace', category: 'prefix' },
+  { id: 96, thai: 'โอบกอด', english: 'embrace', category: 'prefix' },
 
   // ex- prefix entries
   { id: 97, thai: 'หายใจออก', english: 'exhale', category: 'prefix' },
@@ -124,7 +124,7 @@ export const vocabularyData: Vocabulary[] = [
 
   // extra- prefix entries
   { id: 101, thai: 'กิจกรรมนอกหลักสูตร', english: 'extracurricular', category: 'prefix' },
-  { id: 102, thai: 'ต่างดาว', english: 'extraterrestrial', category: 'prefix' },
+  { id: 102, thai: 'มนุษย์ต่างดาว', english: 'extraterrestrial', category: 'prefix' },
   { id: 103, thai: 'พิเศษ', english: 'extraordinary', category: 'prefix' },
 
   // fore- prefix entries
@@ -143,7 +143,7 @@ export const vocabularyData: Vocabulary[] = [
   // hyper- prefix entries
   { id: 111, thai: 'กระฉับกระเฉง', english: 'hyperactive', category: 'prefix' },
   { id: 112, thai: 'เกินจริง', english: 'hyperbole', category: 'prefix' },
-  { id: 113, thai: 'ไวเกินปกติ', english: 'hypersensitive', category: 'prefix' },
+  { id: 113, thai: 'ไวต่อความรู้สึกมาก', english: 'hypersensitive', category: 'prefix' },
 
   // hypo- prefix entries
   { id: 114, thai: 'ภาวะอุณหหภูมิต่ำ', english: 'hypothermia', category: 'prefix' },
@@ -194,9 +194,9 @@ export const vocabularyData: Vocabulary[] = [
   { id: 139, thai: 'อคติ', english: 'prejudice', category: 'prefix' },
 
   // post- prefix entries
-  { id: 140, thai: 'หลังลายมือ', english: 'postscript', category: 'prefix' },
-  { id: 141, thai: 'หลังปริญญา', english: 'postgraduate', category: 'prefix' },
-  { id: 142, thai: 'หลังการตาย', english: 'postmortem', category: 'prefix' },
+  { id: 140, thai: 'บทส่งท้าย', english: 'postscript', category: 'prefix' },
+  { id: 141, thai: 'ปริญญาโท', english: 'postgraduate', category: 'prefix' },
+  { id: 142, thai: 'การชันสูตรพลิกศพ', english: 'postmortem', category: 'prefix' },
 
   // pro- prefix entries
   { id: 143, thai: 'ยั่วยุ', english: 'provoke', category: 'prefix' },
