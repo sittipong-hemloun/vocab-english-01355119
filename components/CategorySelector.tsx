@@ -8,7 +8,7 @@ export default function CategorySelector() {
   const router = useRouter();
 
   const onSelectCategory = (category: string) => {
-    router.push(`/test?category=${category}`);
+    router.push(`/test-vocab?category=${category}`);
   };
 
   return (
