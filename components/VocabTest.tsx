@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { vocabularyData } from '@/data/vocabulary';
 import { Vocabulary } from '@/types/vocabulary';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface VocabTestProps {
   category: string | null;
@@ -16,7 +17,7 @@ export default function VocabTest({ category }: VocabTestProps) {
   const [correctAnswer, setCorrectAnswer] = useState<string | null>(null);
 
   // Text-to-speech setup
-  const speakText = useCallback((text: string, language: 'en-US' | 'th-TH' = 'en-US') => {
+  const speakText = useCallback((text: string, language: 'en-US' = 'en-US') => {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = language;
     window.speechSynthesis.speak(utterance);
@@ -52,7 +53,7 @@ export default function VocabTest({ category }: VocabTestProps) {
 
       if (isAnswerCorrect) {
         speakText(currentVocab.english);
-        setTimeout(() => selectRandomVocab(vocabList), 500);
+        setTimeout(() => selectRandomVocab(vocabList), 1000);
       } else {
         setCorrectAnswer(currentVocab.english);
         speakText(currentVocab.english);
@@ -64,25 +65,35 @@ export default function VocabTest({ category }: VocabTestProps) {
     selectRandomVocab(vocabList);
   };
 
-  if (!currentVocab) return <div>กำลังโหลด...</div>;
+  if (!currentVocab) return <div>Loading...</div>;
 
   return (
-    <div className=" bg-white rounded-lg shadow-lg p-4">
-      <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
-        ทายคำศัพท์ภาษาอังกฤษ
+    <div className="bg-gradient-to-br from-blue-100 to-green-100 rounded-lg shadow-lg p-6">
+      <h2 className="text-2xl font-extrabold mb-6 text-center text-gray-900">
+        🌟 Guess the Word! 🌟
       </h2>
+
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentVocab.thai}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="mb-6 text-center text-2xl font-bold text-purple-700">
+            {currentVocab.thai}
+          </div>
+        </motion.div>
+      </AnimatePresence>
 
       <div className="flex justify-center mb-4">
         <button
           onClick={() => speakText(currentVocab.english)}
-          className="mr-2 px-3 py-1 bg-blue-400 text-white rounded"
+          className="mr-2 px-4 py-2 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-110"
         >
           🔊
         </button>
-      </div>
-
-      <div className="mb-4 text-center text-xl font-semibold text-blue-600">
-        {currentVocab.thai}
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -90,35 +101,41 @@ export default function VocabTest({ category }: VocabTestProps) {
           type="text"
           value={userAnswer}
           onChange={(e) => setUserAnswer(e.target.value)}
-          placeholder={"Type translation"}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+          placeholder="Type your answer here..."
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-300 text-black"
         />
         <button
           type="submit"
-          className="w-full px-4 py-2 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition duration-200"
+          className="w-full px-4 py-2 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105"
         >
-          {'Check Answer'}
+          Check Answer
         </button>
       </form>
 
       {isCorrect !== null && (
-        <div className={`mt-4 text-center font-semibold ${isCorrect ? 'text-green-600' : 'text-red-600'}`}>
-          {isCorrect ? '✅ ถูกต้อง!' : '❌ ผิด!'}
-        </div>
+        <motion.div
+          className={`mt-4 text-center text-lg font-semibold ${isCorrect ? 'text-green-600' : 'text-red-600'
+            }`}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          {isCorrect ? '✅ Correct!' : '❌ Wrong!'}
+        </motion.div>
       )}
 
       {correctAnswer && !isCorrect && (
         <div className="mt-4 text-center text-gray-700">
-          <span className="font-medium">คำตอบที่ถูกต้อง:</span> {correctAnswer}
+          <span className="font-medium">Correct Answer:</span> {correctAnswer}
         </div>
       )}
 
       <div className="mt-6 text-center">
         <button
           onClick={handleNext}
-          className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-200"
+          className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105"
         >
-          ถัดไป
+          Next Word
         </button>
       </div>
     </div>
