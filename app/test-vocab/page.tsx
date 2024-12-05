@@ -17,7 +17,7 @@ export default function TestVocab() {
   return (
     <div className='min-h-screen flex items-center justify-center'>
       <Suspense>
-        <div className='max-w-md mx-auto px-2'>
+        <div className='max-w-md mx-auto px-4'>
         <SearchVocab />
         </div>
       </Suspense>
