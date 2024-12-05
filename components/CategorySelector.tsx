@@ -13,7 +13,7 @@ export default function CategorySelector() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center ">
+    <div className="flex flex-col items-center justify-center px-4">
       <motion.div
         className="bg-white p-10 rounded-3xl shadow-xl border bg-gradient-to-b from-blue-50 to-indigo-100"
         initial={{ opacity: 0, y: 50 }}

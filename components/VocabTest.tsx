@@ -4,9 +4,15 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { vocabularyData } from '@/data/vocabulary';
 import { Vocabulary } from '@/types/vocabulary';
 import { motion, AnimatePresence } from 'framer-motion';
+import axios from 'axios';
 
 interface VocabTestProps {
   category: string | null;
+}
+
+interface DictionaryDefinition {
+  definition: string;
+  example?: string;
 }
 
 export default function VocabTest({ category }: VocabTestProps) {
@@ -16,11 +22,45 @@ export default function VocabTest({ category }: VocabTestProps) {
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [correctAnswer, setCorrectAnswer] = useState<string | null>(null);
 
+  // New state for dictionary hints
+  const [hint, setHint] = useState<DictionaryDefinition | null>(null);
+  const [isHintLoading, setIsHintLoading] = useState(false);
+  const [hintError, setHintError] = useState<string | null>(null);
+
   // Text-to-speech setup
   const speakText = useCallback((text: string, language: 'en-US' = 'en-US') => {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = language;
     window.speechSynthesis.speak(utterance);
+  }, []);
+
+  // Function to fetch dictionary definition
+  const fetchWordDefinition = useCallback(async (word: string) => {
+    if (!word) return;
+
+    setIsHintLoading(true);
+    setHint(null);
+    setHintError(null);
+
+    try {
+      // Using free dictionary API
+      const response = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+
+      if (response.data && response.data.length > 0) {
+        const firstMeaning = response.data[0].meanings[0];
+        setHint({
+          definition: firstMeaning?.definitions[0]?.definition || 'No definition found',
+          example: firstMeaning?.definitions[0]?.example
+        });
+      } else {
+        setHintError('No definition found');
+      }
+    } catch (error) {
+      console.error('Error fetching dictionary definition:', error);
+      setHintError('Failed to fetch definition');
+    } finally {
+      setIsHintLoading(false);
+    }
   }, []);
 
   useEffect(() => {
@@ -32,8 +72,10 @@ export default function VocabTest({ category }: VocabTestProps) {
   useEffect(() => {
     if (currentVocab) {
       speakText(currentVocab.english, 'en-US');
+      // Fetch definition when a new vocab word is selected
+      fetchWordDefinition(currentVocab.english);
     }
-  }, [currentVocab, speakText]);
+  }, [currentVocab, speakText, fetchWordDefinition]);
 
   const selectRandomVocab = (list: Vocabulary[]) => {
     if (list.length > 0) {
@@ -42,6 +84,8 @@ export default function VocabTest({ category }: VocabTestProps) {
       setUserAnswer('');
       setIsCorrect(null);
       setCorrectAnswer(null);
+      setHint(null);
+      setHintError(null);
     }
   };
 
@@ -80,23 +124,50 @@ export default function VocabTest({ category }: VocabTestProps) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.5 }}
+          className='flex justify-between items-center'
         >
-          <div className="mb-6 text-center text-2xl font-bold text-purple-700">
+          
+          <div className="text-center text-2xl font-bold text-purple-700">
             {currentVocab.thai}
           </div>
+          <button
+            onClick={() => speakText(currentVocab.english)}
+            className="px-4 py-2 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-110"
+          >
+            🔊
+          </button>
         </motion.div>
       </AnimatePresence>
 
-      <div className="flex justify-center mb-4">
-        <button
-          onClick={() => speakText(currentVocab.english)}
-          className="mr-2 px-4 py-2 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-110"
-        >
-          🔊
-        </button>
+      <div className="flex justify-center mb-4 space-x-2">
+        
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      {/* Hint Section */}
+      {isHintLoading && (
+        <div className="mt-4 text-center text-gray-600">Loading hint...</div>
+      )}
+      {hintError && (
+        <div className="mt-4 text-center text-red-600">{hintError}</div>
+      )}
+      {hint && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="mt-4 bg-white p-4 rounded-lg shadow-md"
+        >
+          <h3 className="font-bold text-gray-800 mb-2">Dictionary Hint:</h3>
+          <p className="text-gray-700 mb-2">{hint.definition}</p>
+          {hint.example && (
+            <p className="text-gray-600 italic text-sm">
+              Example: {hint.example}
+            </p>
+          )}
+        </motion.div>
+      )}
+
+      <form onSubmit={handleSubmit} className="space-y-4 mt-4">
         <input
           type="text"
           value={userAnswer}
@@ -114,8 +185,7 @@ export default function VocabTest({ category }: VocabTestProps) {
 
       {isCorrect !== null && (
         <motion.div
-          className={`mt-4 text-center text-lg font-semibold ${isCorrect ? 'text-green-600' : 'text-red-600'
-            }`}
+          className={`mt-4 text-center text-lg font-semibold ${isCorrect ? 'text-green-600' : 'text-red-600'}`}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -130,7 +200,7 @@ export default function VocabTest({ category }: VocabTestProps) {
         </div>
       )}
 
-      <div className="mt-6 text-center">
+      <div className="mt-6 text-end">
         <button
           onClick={handleNext}
           className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105"

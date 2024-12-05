@@ -4,7 +4,7 @@ export const vocabularyData: Vocabulary[] = [
 
   // root entries
   { id: 3, thai: 'ประจำปี', english: 'annual', category: 'root' },
-  { id: 4, thai: 'น้ำ', english: 'aquatic', category: 'root' },
+  { id: 4, thai: 'พืชน้ำ', english: 'aquatic', category: 'root' },
   { id: 5, thai: 'นักบินอวกาศ', english: 'astronaut', category: 'root' },
   { id: 6, thai: 'ได้ยินเสีนง', english: 'audible', category: 'root' },
   { id: 7, thai: 'ผลประโยชน์', english: 'benefit', category: 'root' },
@@ -78,7 +78,7 @@ export const vocabularyData: Vocabulary[] = [
 
   // ab- prefix entries
   { id: 71, thai: 'ผิดปกติ', english: 'abnormal', category: 'prefix' },
-  { id: 72, thai: 'งดเว้น', english: 'abstain', category: 'prefix' },
+  { id: 72, thai: 'ยับยั้งตัวเอง', english: 'abstain', category: 'prefix' },
   { id: 73, thai: 'ชิงตัว', english: 'abduct', category: 'prefix' },
 
   // anti- prefix entries
@@ -151,7 +151,7 @@ export const vocabularyData: Vocabulary[] = [
 
   // in-, im-, il-, ir-, un-, non- prefix entries
   { id: 116, thai: 'มองไม่เห็น', english: 'invisible', category: 'prefix' },
-  { id: 117, thai: 'ขาดความอดทน', english: 'impatient', category: 'prefix' },
+  { id: 117, thai: 'ไม่ยอมรับความล่าช้า', english: 'impatient', category: 'prefix' },
   { id: 118, thai: 'ไร้เหตุผล', english: 'illogical', category: 'prefix' },
   { id: 119, thai: 'ไร้ความรับผิดชอบ', english: 'irresponsible', category: 'prefix' },
   { id: 120, thai: 'ไม่รู้ตัว', english: 'unaware', category: 'prefix' },
