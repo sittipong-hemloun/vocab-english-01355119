@@ -186,7 +186,7 @@ export const vocabularyData: Vocabulary[] = [
   { id: 135, thai: 'ตอบสนองมากเกินไป', english: 'overreact', category: 'prefix' },
 
   // poly- prefix entries
-  { id: 136, thai: 'หลายคู่สมรส', english: 'polygamy', category: 'prefix' },
+  { id: 136, thai: 'มีคู่สมรสหลายคน', english: 'polygamy', category: 'prefix' },
   { id: 137, thai: 'หลายเหลี่ยม', english: 'polygon', category: 'prefix' },
 
   // pre- prefix entries
